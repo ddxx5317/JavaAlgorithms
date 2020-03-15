@@ -16,5 +16,9 @@ public class InvertArray {
         for (int j = 0; j < a.length; j++) {
             System.out.print(a[a.length-1-j] + "  ");
         }
+        System.out.println("---------------------");
+        for (int j = a.length-1; j >=0; j--) {
+            System.out.print(a[j] + "  ");
+        }
     }
 }

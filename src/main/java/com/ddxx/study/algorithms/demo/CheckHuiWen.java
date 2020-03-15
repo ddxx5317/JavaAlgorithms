@@ -10,5 +10,9 @@ public class CheckHuiWen extends  HuiWen{
     public static void main(String[] args) {
         String str = "abcba";
         System.out.println(isPalindrome(str));
+        for (int i = 0; i < args.length; i++) {
+            String arg = args[i];
+
+        }
     }
 }

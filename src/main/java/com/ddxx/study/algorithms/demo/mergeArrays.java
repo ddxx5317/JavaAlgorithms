@@ -11,8 +11,8 @@ import java.util.Arrays;
  */
 public class mergeArrays {
     public static void main(String[] args) {
-        int[] arrA = {1,3,5,8};
-        int[] arrB = {2,4,7};
+        int[] arrA = {1,3,5,6};
+        int[] arrB = {2,4,8};
         System.out.println(Arrays.toString(merge(arrA,arrB)));
     }
     private static int[] merge(int[] arrA, int[] arrB) {
@@ -27,7 +27,7 @@ public class mergeArrays {
                 arrC[k++] = arrB[j++];
             }
         }
-        // 下面两个while表示，其中一个短数组已经复制完了，所有可能走其中while
+        // 上面的循环结束表示其中一个数组已经复制完了，所以下面循环走其一
         while (i<lena){
             arrC[k++] = arrA[i++];
         }

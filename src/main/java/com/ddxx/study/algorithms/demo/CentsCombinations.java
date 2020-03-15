@@ -1,11 +1,5 @@
 package com.ddxx.study.algorithms.demo;
 
-import ch.qos.logback.core.pattern.FormatInfo;
-import com.sun.org.apache.xalan.internal.xsltc.dom.ForwardPositionIterator;
-
-import java.lang.reflect.InvocationTargetException;
-import java.util.concurrent.ForkJoinPool;
-
 /**
  * 1角硬币、2角硬币、5角硬币、问有多少种组合得到一块钱
  */
