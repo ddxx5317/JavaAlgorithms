@@ -1,11 +1,14 @@
 package com.ddxx.study.algorithms.java8;
 
+import java.io.Serializable;
+
 /**
  * @Author: ddxx
  * @Date: 2020/3/14
  * @Description:
  */
-public class User {
+public class User implements Serializable {
+    private static final long serialVersionUID = 2393514629537373761L;
     private String name;
     private int age;
     private String school;
