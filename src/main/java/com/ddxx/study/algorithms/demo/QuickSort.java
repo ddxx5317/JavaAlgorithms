@@ -1,5 +1,8 @@
 package com.ddxx.study.algorithms.demo;
 
+import java.util.Arrays;
+import java.util.GregorianCalendar;
+
 /**
  * 分治法
  * 它的思想主要是通过一趟排序将待排记录分隔成独立的两部分，其中的一部分比关键字小，
@@ -8,7 +11,7 @@ package com.ddxx.study.algorithms.demo;
  */
 public class QuickSort {
     public static void main(String[] args) {
-        int arr[] = {1, 8, 5, 3, 2, 4};
+        int arr[] = {6,3,7,4,1};
         doQuickSort(arr,0,arr.length-1);
     }
     public static int partition(int[] array,int low,int high){
@@ -24,7 +27,9 @@ public class QuickSort {
             array[high] = array[low];
         }
 
-        // 此时low=high、所以array[low] = array[low] = base，即返回low和high结果一样;
+        // 此时一趟排序结束、重新设置枢纽元素
+        // 而此时low=high、所以array[low] = array[low]
+        // 即返回low和high结果一样
         array[low] = base;
         return low;
     }
@@ -36,5 +41,6 @@ public class QuickSort {
         int index = partition(array,low,high);
         doQuickSort(array,low,index-1);
         doQuickSort(array,index+1,high);
+        System.out.println(Arrays.toString(array));
     }
 }
