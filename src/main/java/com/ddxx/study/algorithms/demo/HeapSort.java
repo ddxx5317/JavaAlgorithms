@@ -40,16 +40,24 @@ public class HeapSort {
      * @param arr 待排序列
      * @param parent 父节点
      * @param length 待排序列尾元素索引
+     *
      */
     private static void adjustHeap(int[] arr, int parent, int length) {
         //将temp作为父节点
         int temp = arr[parent];
+        /**
+         * 由于堆存储在下标从0开始计数的数组中，因此，在堆中给定下标为i的结点时：
+         * 如果 i = 0，结点 i 是根结点，无父结点；否则结点 i 的父结点为结点 [(i - 2) / 2] 向上取整
+         * 如果 2i + 1 > n - 1，则结点 i 无左子女；否则结点 i 的左子女为结点 2i + 1
+         * 如果 2i + 2 > n - 1，则结点 i 无右结点；否则结点 i 的右子女为结点 2i + 2
+         */
         //左孩子
         int lChild = 2 * parent + 1;
 
         while (lChild < length) {
             //右孩子
             int rChild = lChild + 1;
+
             // 如果有右孩子结点，并且右孩子结点的值大于左孩子结点，则选取右孩子结点
             if (rChild < length && arr[lChild] < arr[rChild]) {
                 lChild++;
