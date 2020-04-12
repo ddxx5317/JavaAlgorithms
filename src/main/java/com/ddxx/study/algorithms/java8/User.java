@@ -13,6 +13,7 @@ public class User implements Serializable {
     private int age;
     private String school;
 
+    public  User(){}
     public User(String name, int age) {
         this.name = name;
         this.age = age;
