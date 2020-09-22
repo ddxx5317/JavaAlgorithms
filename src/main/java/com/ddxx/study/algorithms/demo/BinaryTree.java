@@ -1,4 +1,4 @@
-package com.ddxx.study.algorithms.java8;
+package com.ddxx.study.algorithms.demo;
 
 public class BinaryTree {
     /** 

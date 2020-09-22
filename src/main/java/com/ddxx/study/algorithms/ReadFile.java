@@ -24,7 +24,7 @@ public class ReadFile {
                         Class<?> clazz = Class.forName(fullName);
                         Object[] objects = clazz.getEnumConstants();
                         Method getCodeMethod = getInvokeMethod(clazz, Arrays.asList("getCode","getKey"),0);
-                        Method getMsgMethod = getInvokeMethod(clazz, Arrays.asList("getValuex","getXxxx","getDescriptionx"),0);
+                        Method getMsgMethod = getInvokeMethod(clazz, Arrays.asList("getValue","getXxxx","getDescription"),0);
 
                         if (getCodeMethod == null || getMsgMethod == null){
                             System.out.println("无效枚举:"+clazz.getName());

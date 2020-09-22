@@ -1,4 +1,4 @@
-package com.ddxx.study.algorithms.java8;
+package com.ddxx.study.algorithms.demo;
  
 import java.util.HashMap;
 import java.util.LinkedHashMap;
