@@ -1,4 +1,4 @@
-package com.ddxx.study.algorithms.callback;
+package com.ddxx.study.algorithms.java8;
 
 import java.util.concurrent.CompletableFuture;
 
