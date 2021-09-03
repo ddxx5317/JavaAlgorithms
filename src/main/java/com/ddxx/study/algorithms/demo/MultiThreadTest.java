@@ -4,7 +4,7 @@ import java.util.concurrent.LinkedTransferQueue;
 
  
 
-public class Demo3 {
+public class MultiThreadTest {
 
     private static LinkedTransferQueue linkedC = new LinkedTransferQueue();
     private static LinkedTransferQueue linkedN = new LinkedTransferQueue();
