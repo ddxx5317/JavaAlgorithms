@@ -14,5 +14,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface RawDataProcess {
 
-    MqTypeEnum mqTypeEnum() default MqTypeEnum.OFC_INIT;
+    MqTypeEnum mqTypeEnum() default MqTypeEnum.INIT;
 }

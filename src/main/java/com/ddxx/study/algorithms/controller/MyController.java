@@ -27,7 +27,7 @@ public class MyController {
     }
 
     @GetMapping("/aop")
-    @RawDataProcess(mqTypeEnum = MqTypeEnum.ORDER_PAY_POST)
+    @RawDataProcess(mqTypeEnum = MqTypeEnum.INIT)
     public String aop() {
         String result = "aop success";
         System.out.println(result);
