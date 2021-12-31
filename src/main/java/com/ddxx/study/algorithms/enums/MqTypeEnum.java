@@ -1,6 +1,6 @@
 
 
-package com.ddxx.study.algorithms.aop;
+package com.ddxx.study.algorithms.enums;
 
 public enum MqTypeEnum {
     INIT(100, "初始订单消息");

@@ -17,7 +17,7 @@ public class FindMaxHuiWen extends HuiWen {
         for (int i = 0;i < str.length();i++){
             for(int j = str.length();j > i;j--){
                 tempString = str.substring(i,j-1);
-                if(isPalindrome(tempString) && (j-i+1)>max){
+                if(isPalindrome(tempString) && (j-i+1) > max){
                     max = j-i+1;
                     result = tempString;
                 }

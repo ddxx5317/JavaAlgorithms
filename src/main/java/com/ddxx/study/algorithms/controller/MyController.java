@@ -1,8 +1,11 @@
 package com.ddxx.study.algorithms.controller;
 
-import com.ddxx.study.algorithms.aop.MqTypeEnum;
-import com.ddxx.study.algorithms.aop.RawDataProcess;
+import com.ddxx.study.algorithms.enums.MqTypeEnum;
+import com.ddxx.study.algorithms.annotations.RawDataProcess;
+import com.ddxx.study.algorithms.aop.SyncProcessServiceFactory;
+import com.ddxx.study.algorithms.enums.ProcessTypeEnum;
 import com.ddxx.study.algorithms.events.MyEvent;
+import com.ddxx.study.algorithms.service.IProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +19,9 @@ public class MyController {
 
     @Autowired
     private ApplicationContext applicationContext;
+
+    @Autowired
+    private SyncProcessServiceFactory syncProcessServiceFactory;
 
     @GetMapping("/sayHello.json")
     public String sayHello() {
@@ -32,5 +38,14 @@ public class MyController {
         String result = "aop success";
         System.out.println(result);
         return result;
+    }
+
+    @GetMapping("/tt")
+    public String tt() {
+        final IProcessor processor = (IProcessor)syncProcessServiceFactory.getInstance(ProcessTypeEnum.DELETE);
+        if (processor == null){
+            return "error";
+        }
+        return processor.doTest();
     }
 }

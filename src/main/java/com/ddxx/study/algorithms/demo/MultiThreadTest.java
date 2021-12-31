@@ -25,7 +25,7 @@ public class MultiThreadTest {
                     e.printStackTrace();
                 }
             }
-        });
+        },"t001");
 
         Thread t2 = new Thread(() -> {
             for(char naa : na) {
@@ -37,7 +37,7 @@ public class MultiThreadTest {
                     e.printStackTrace();
                 }
             }
-        });
+        },"t002");
         t1.start();
         t2.start();
     }

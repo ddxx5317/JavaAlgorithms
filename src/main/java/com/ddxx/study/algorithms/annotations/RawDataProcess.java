@@ -1,4 +1,6 @@
-package com.ddxx.study.algorithms.aop;
+package com.ddxx.study.algorithms.annotations;
+
+import com.ddxx.study.algorithms.enums.MqTypeEnum;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

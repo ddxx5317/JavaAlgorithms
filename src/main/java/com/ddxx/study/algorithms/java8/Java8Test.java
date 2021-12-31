@@ -1,8 +1,9 @@
 package com.ddxx.study.algorithms.java8;
 
+import com.google.common.collect.Lists;
+
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
@@ -43,7 +44,6 @@ public class Java8Test {
                 .filter(u -> u.getName().startsWith("王"))
                 .map(u -> u.getSchool()).collect(Collectors.toList());
         System.out.println(schools);
-
 
         IntSummaryStatistics summaryStatistics = Arrays.asList(new User("张三", 44,"华中科技大学"),
                 new User("李四", 22,"北京大学"),
@@ -95,5 +95,34 @@ public class Java8Test {
         int sumResult1 = intList.stream().reduce(0,(sum,n) -> sum + n);
         System.out.println(sumResult);
         System.out.println(sumResult1);
+
+
+        String packages = null;
+        final String[] split = Optional.ofNullable(packages).orElse("").split(",");
+        final List<String> strings = Lists.newArrayList(split);
+        System.out.println(strings);
+        System.out.println("------------------");
+
+        final List<User> sortedUsers = Arrays.asList(new User("张三", 44, "华中科技大学"),
+                        new User("李四", 16, "北京大学"),
+                        new User("王五", 33, "清华大学"),
+                        new User("王六", 10, "西北大学"))
+                .stream().sorted(Comparator.comparing(User::getAge)).collect(Collectors.toList());
+
+        final User maxUser = Arrays.asList(new User("张三", 44, "华中科技大学"),
+                        new User("李四", 16, "北京大学"),
+                        new User("王五", 33, "清华大学"),
+                        new User("王六", 10, "西北大学"))
+                .stream().max(Comparator.comparing(User::getAge)).get();
+        sortedUsers.stream().forEach(System.out::println);
+        System.out.println("------------------");
+        System.out.println(maxUser);
+
+
+        final long count = Arrays.asList(new User("张三", 44, "华中科技大学"),
+                        new User("李四", 16, "北京大学"),
+                        new User("王六", 10, "西北大学"))
+                .stream().count();
+        System.out.println("count="+count);
     }
 }
